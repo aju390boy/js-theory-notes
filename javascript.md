@@ -23,4 +23,5 @@
 
 ## enum
 **A:** Actually,Enum is NOT a data type in JavaScript.
-JavaScript does not have a built-in enum keyword like Java or TypeScript.
+* **Primitive:** JavaScript does not have a built-in enum keyword like Java or TypeScript.
+* **Primitive:**Enum is a predefined set of allowed values used to control what data can be stored in a field.
