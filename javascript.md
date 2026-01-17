@@ -21,16 +21,6 @@
 
 ---
 
-## Functions & Scope
-
-### Q: What is a Closure?
-**A:** A closure is a function that remembers its outer variables and can access them even when the function is executed outside its original scope.
-
-```javascript
-function outer() {
-  let count = 0;
-  return function inner() {
-    count++;
-    return count;
-  };
-}
+## enum
+**A:** Actually,Enum is NOT a data type in JavaScript.
+JavaScript does not have a built-in enum keyword like Java or TypeScript.
