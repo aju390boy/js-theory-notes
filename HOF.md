@@ -4,10 +4,12 @@
 
 * **Purpose**: transform items → new array
 
-```[1,2,3].map(n => {
+```
+[1,2,3].map(n => {
   return n * 2;
 });
 
+```
 
 2️⃣ filter → must return boolean
 
