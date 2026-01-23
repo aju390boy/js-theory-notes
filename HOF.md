@@ -1,4 +1,4 @@
-### Higher order functions
+# Higher order functions
 
 ## 1️⃣ map → must return
 
@@ -10,7 +10,7 @@
 });
 
 ```
-# Rule:
+### Rule:
 * Returned value ➜ goes into the new array
 * ❌ No return ➜ undefined is added to the array
 * 🧠 Think: "replace each element" 
@@ -25,8 +25,7 @@
 });
 
 ```
-
-# Rule:
+### Rule:
 * true → keep item
 * false → remove item
 * 🧠 Think: “keep or throw”
@@ -41,9 +40,7 @@
 }, 0);
 
 ```
-
-
-# Rule:
+### Rule:
 * return acc every time
 * returned acc → next iteration acc
 * 🧠 Think: “carry forward result”
@@ -59,8 +56,7 @@
 });
 
 ```
-
-# Rule:
+### Rule:
 * return ignored
 * always returns undefined
 * 🧠 Think: “just run code”
@@ -74,8 +70,7 @@
 [2,4,6].every(n => n % 2 === 0);
 
 ```
-
-# Rule:
+### Rule:
 * if any false → stops, returns false
 * all true → true
 * 🧠 Think: “are ALL good?”
@@ -88,9 +83,7 @@
 [1,3,4].some(n => n % 2 === 0);
 
 ```
-
-
-# Rule:
+### Rule:
 * if any true → stops, returns true
 * all false → false
 * 🧠 Think: “is ANY good?”
