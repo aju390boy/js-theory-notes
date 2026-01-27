@@ -20,8 +20,8 @@ class Node {
 * this.next = null: By default, this block isn't holding onto anyone else yet. null means "nothing".
 
 
-# 2. The Manager: class LinkedList
-## This is the Train Station Master. It doesn't hold the data itself; it just knows where the first train car (the head) is.
+## 2. The Manager: class LinkedList
+### This is the Train Station Master. It doesn't hold the data itself; it just knows where the first train car (the head) is.
 
 ```js
 class LinkedList {
@@ -36,8 +36,8 @@ class LinkedList {
   ```
   * this.head: This is the most important variable. It points to the first node. If we lose the head, we lose the whole list!
 
-# 3. Adding to the End: append(value)
-## This acts like: "Go find the end of the line and attach this new guy."
+## 3. Adding to the End: append(value)
+### This acts like: "Go find the end of the line and attach this new guy."
 
 ```js
 append(value) {
@@ -62,8 +62,8 @@ append(value) {
   ```
   * current: Think of this as your finger pointing at a node. You move your finger from one node to the next until you hit the end.
 
-# 4. Adding to the Front: prepend(value)
-## This is easier. We just push everyone back and put the new guy at the very front.
+## 4. Adding to the Front: prepend(value)
+### This is easier. We just push everyone back and put the new guy at the very front.
 
 ```js
 prepend(value) {
@@ -79,8 +79,8 @@ prepend(value) {
 
   * Why is this fast? We don't need a loop! We don't need to walk to the end. We just swap the first spot.
 
-# 5. Deleting: removeValue(value)
-## his is the trickiest part. To remove a guy in the middle, we have to find the guy before him and tell him to skip the guy we are deleting.
+## 5. Deleting: removeValue(value)
+### his is the trickiest part. To remove a guy in the middle, we have to find the guy before him and tell him to skip the guy we are deleting.
 
 ```js
 removeValue(value) {
@@ -126,8 +126,8 @@ removeValue(value) {
 
 * B is now detached and floating in space (garbage collected).
 
-# 6. Showing the List: print()
-## We just walk through the list and add the numbers to a string.
+## 6. Showing the List: print()
+### We just walk through the list and add the numbers to a string.
 
 ```js
 print() {
