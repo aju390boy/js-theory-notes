@@ -36,3 +36,7 @@
 
 ### Q: Just-In-Time (JIT)?
 * Modern JavaScript engines use JIT compilation to improve performance by compiling code into machine code at runtime. JavaScript does not require specifying variable data types because it is a dynamically typed language.
+
+### Q: Closure?
+* "A closure is the combination of a function bundled together with references to its lexical environment, allowing you to        encapsulate private data that cannot be accessed from outside."
+* This means that the function has access to variables and functions defined in its outer scope, even after the outer scope has finished executing
