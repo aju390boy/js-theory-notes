@@ -210,6 +210,83 @@ findMiddle() {
 ```
 
 ### Question 3: Remove Duplicates
+```js
+5 → 3 → 7 → 3 → 9
+```
+```js
+seen = {}
+current → head
+prev → null
+```
+✅ Step 1 — Node = 5
+Is 5 inside Set?
+
+❌ No.
+
+👉 Add it.
+
+```js
+
+seen = {5}
+prev = 5
+current → 3
+
+```
+✅ Step 2 — Node = 3
+Seen before?
+
+❌ No.
+
+Add it.
+
+```js
+
+seen = {5,3}
+prev = 3
+current → 7
+
+```
+
+✅ Step 3 — Node = 7
+New again.
+
+```js 
+
+seen = {5,3,7}
+prev = 7
+current → 3
+
+```
+
+🚨 Step 4 — Node = 3 AGAIN
+Now the magic moment.
+
+Set says:
+
+“Duplicate detected 🚨”
+
+So what do we do?
+
+We delete the node by skipping it.
+
+This is the most important linked list trick on Earth:
+
+```js
+
+prev.next = current.next
+
+```
+Meaning:
+
+👉 Connect 7 directly to 9.
+
+Now the list becomes:
+
+```js
+
+5 → 3 → 7 → 9
+
+```
 
 ```js
 removeDuplicates() {
@@ -232,7 +309,7 @@ removeDuplicates() {
 
 ```
 
-### Question 3: Remove Duplicates (From Sorted List)
+### Question 4: Remove Duplicates (From Sorted List)
 The Goal: Delete repeated numbers. Input: 1 -> 1 -> 2 -> 3 -> 3 Output: 1 -> 2 -> 3
 
 * The Logic: Since the list is sorted, duplicates are always neighbors. We look at the current node and ask: "Is my value the same as the next guy's value?"

@@ -10,7 +10,8 @@
 
 # CASUAL WORDS
 
-
+### 1. stink
+* bad smell or something 
 
 
 
