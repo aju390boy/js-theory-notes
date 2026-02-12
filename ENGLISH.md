@@ -3,7 +3,7 @@
 
 ## FORMAL WORDS
 
-### Mitigate(reduce the effect of something)(12-2-2026)
+  Mitigate(reduce the effect of something)(12-2-2026)
 * We should mitigate the risk before deploying to production
 
 
@@ -18,11 +18,11 @@
 
 ## ADDITIONAL WORDS 
 
-### GREEN GROSSER : vegitables seller
-### FISHMONGER : fisherman
-### FLOWERIST : flower seller
-### SNEEZING = thummal
-### COUGHING = chuma
+* GREEN GROSSER : vegitables seller
+* FISHMONGER : fisherman
+* FLOWERIST : flower seller
+* SNEEZING = thummal
+* COUGHING = chuma
 
 
 
