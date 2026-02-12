@@ -148,6 +148,9 @@ print() {
 
   ```
 
+# PRACTICAL QUESTIONS
+
+
 ### Question 1: Reverse the Linked List
 The Goal: Turn 1 -> 2 -> 3 -> null into 3 -> 2 -> 1 -> null.
 
@@ -161,7 +164,6 @@ The Logic (Noob English): Imagine a line of people holding hands. Person A holds
 
 ```js
 
-JavaScript
 reverse() {
     let prev = null;
     let current = this.head;
@@ -192,7 +194,6 @@ When the Hare reaches the finish line (the end of the list), the Tortoise will b
 
 ```js
 
-JavaScript
 findMiddle() {
     let slow = this.head;
     let fast = this.head;
@@ -219,7 +220,6 @@ The Goal: Delete repeated numbers. Input: 1 -> 1 -> 2 -> 3 -> 3 Output: 1 -> 2 -
 
 ```js
 
-JavaScript
 removeDuplicates() {
     let current = this.head;
 
