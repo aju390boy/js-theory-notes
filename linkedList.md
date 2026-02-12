@@ -147,3 +147,92 @@ print() {
   }
 
   ```
+
+### Question 1: Reverse the Linked List
+The Goal: Turn 1 -> 2 -> 3 -> null into 3 -> 2 -> 1 -> null.
+
+The Logic (Noob English): Imagine a line of people holding hands. Person A holds B's hand. B holds C's hand. To reverse it, you have to tell everyone to let go of the person in front of them and grab the hand of the person behind them. We need three pointers to do this safely so we don't lose anyone:
+
+* prev: The person behind you (starts as null/empty).
+
+* current: The person we are currently dealing with.
+
+* next: The person ahead (we need to remember them before we let go!).
+
+```js
+
+JavaScript
+reverse() {
+    let prev = null;
+    let current = this.head;
+    
+    while (current) {
+        const nextNode = current.next; // 1. Save the next guy so we don't lose him
+        current.next = prev;           // 2. Turn the arrow backward! Point to 'prev'
+        
+        // 3. Move everyone forward one step
+        prev = current;                
+        current = nextNode;
+    }
+    
+    this.head = prev; // 4. Reset the head to the last node we touched
+}
+
+```
+### Question 2: Find the Middle Node
+The Goal: Find the center value in one pass. Input: 1 -> 2 -> 3 -> 4 -> 5 Output: 3
+
+* The Logic (The Tortoise and the Hare): Imagine a race track. You have two runners:
+
+* Tortoise (Slow): Runs 1 step at a time.
+
+* Hare (Fast): Runs 2 steps at a time.
+
+When the Hare reaches the finish line (the end of the list), the Tortoise will be exactly halfway there!
+
+```js
+
+JavaScript
+findMiddle() {
+    let slow = this.head;
+    let fast = this.head;
+
+    // While the Hare still has track to run on (must check fast AND fast.next)
+    while (fast && fast.next) {
+        slow = slow.next;       // Run 1 step
+        fast = fast.next.next;  // Run 2 steps
+    }
+
+    return slow.value; // Slow is now standing in the middle
+}
+
+```
+
+### Question 3: Remove Duplicates (From Sorted List)
+The Goal: Delete repeated numbers. Input: 1 -> 1 -> 2 -> 3 -> 3 Output: 1 -> 2 -> 3
+
+* The Logic: Since the list is sorted, duplicates are always neighbors. We look at the current node and ask: "Is my value the same as the next guy's value?"
+
+* Yes: Skip the next guy (current.next = current.next.next).
+
+* No: Just move forward normally.
+
+```js
+
+JavaScript
+removeDuplicates() {
+    let current = this.head;
+
+    while (current && current.next) {
+        if (current.value === current.next.value) {
+            // They are twins! Skip the next one.
+            current.next = current.next.next;
+            this.size--; // Don't forget to decrease size!
+        } else {
+            // Neighbors are different, move forward.
+            current = current.next;
+        }
+    }
+}
+
+```

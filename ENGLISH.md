@@ -1,7 +1,7 @@
 
 # FORMAL WORDS
 
-### mitigate(reduce the effect of something)(12-2-2026)
+### 1. mitigate(reduce the effect of something)
 * We should mitigate the risk before deploying to production
 
 
@@ -19,8 +19,8 @@
 * GREEN GROSSER : vegitables seller
 * FISHMONGER : fisherman
 * FLOWERIST : flower seller
-* SNEEZING = thummal
-* COUGHING = chuma
+* SNEEZING : thummal
+* COUGHING : chuma
 
 
 
@@ -28,6 +28,6 @@
 
 # TIPS AND TRICKS
 
-### content (has different meaning based on pronunciation)
+### 1. content (has different meaning based on pronunciation)
 * KONT-ent : something that is inside something
 * kun-TENT : satisfied or happy
