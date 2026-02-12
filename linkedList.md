@@ -209,6 +209,29 @@ findMiddle() {
 
 ```
 
+### Question 3: Remove Duplicates
+
+```js
+removeDuplicates() {
+    let seen = new Set();
+    let current = this.head;
+    let prev = null;
+
+    while(current){
+        if(seen.has(current.value)){
+            // remove node
+            prev.next = current.next;
+            this.size--;
+        }else{
+            seen.add(current.value);
+            prev = current;
+        }
+        current = current.next;
+    }
+}
+
+```
+
 ### Question 3: Remove Duplicates (From Sorted List)
 The Goal: Delete repeated numbers. Input: 1 -> 1 -> 2 -> 3 -> 3 Output: 1 -> 2 -> 3
 
