@@ -135,12 +135,12 @@ console.log(quickSort([8, 2, 4, 7, 1, 3, 9, 6, 5]));
       * Right: [8]
   ### Result: [[], 7, [8]] $\rightarrow$ [7, 8]
 
-  ## Step 8: Folding it all back together
-  *  Now the answers "bubble up" (return) to the top.
+###  Step 8: Folding it all back together
+Now the answers "bubble up" (return) to the top.
 
-  * 1. From Step 7: The array [8, 7, 9] becomes $\rightarrow$ [7, 8, 9]
-  * 2. From Step 5: The array [8, 7, 9, 6] becomes [[], 6, [7, 8, 9]] $\rightarrow$ [6, 7, 8, 9]
-  * 3. Back to Step 1 (The Big Start):
+* 1. From Step 7: The array [8, 7, 9] becomes $\rightarrow$ [7, 8, 9]
+* 2. From Step 5: The array [8, 7, 9, 6] becomes [[], 6, [7, 8, 9]] $\rightarrow$ [6, 7, 8, 9]
+* 3. Back to Step 1 (The Big Start):
     * We have the sorted Left: [1, 2, 3, 4]
     * We have the Pivot: 5
     * We have the sorted Right: [6, 7, 8, 9]
