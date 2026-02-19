@@ -13,6 +13,9 @@
 ### 1. stink
 * bad smell or something 
 
+### 2. Snooty
+* showing off
+
 
 
 # ADDITIONAL WORDS 
@@ -22,6 +25,8 @@
 * FLOWERIST : flower seller
 * SNEEZING : thummal
 * COUGHING : chuma
+* fewer : countable
+* less : uncountable
 
 
 
