@@ -61,7 +61,10 @@
 ### 1. content (has different meaning based on pronunciation)
 * KONT-ent : something that is inside something
 * kun-TENT : satisfied or happy
-* Jewellery : jool-ry
+
+### 2. Jewellery : jool-ry
+
+### 3. ROW VS OARS
 * Oars : Oars are long sticks used to move a boat in water.
 * Row : A row means a straight line of things.
 
