@@ -107,3 +107,23 @@
 * At the same time – smooth connection
 
 * The point is – when coming to conclusion
+
+* Firstly – when starting a point
+
+* Secondly – when adding next point
+
+* However – instead of “but”
+
+* Therefore – instead of “so” (more strong)
+
+* Moreover – when adding extra information
+
+* Meanwhile – when talking about something happening at same time
+
+* Instead – when showing contrast
+
+* Overall – when summarizing
+
+* Specifically – when giving clear detail
+
+* Ultimately – when giving final conclusion
