@@ -16,27 +16,43 @@
 ### 5. Ascertain
 * To make sure about something by getting facts or proof.
 
+### 6. Allocate
+* destribute something
+
+### 7. Defer
+* postpone something
 
 
 
 
 # CASUAL WORDS (relaxed, friendly, everyday talking)
 
-### 1. stink
+### 1. stingy 
+* person not willing to spend money
+
+### 2. stink
 * bad smell or something 
 
-### 2. Snooty
+### 3. Snooty
 * showing off
 
-### 3. Far-fetched
+### 4. Far-fetched
 * something that is very unlikely, hard to believe, or unrealistic
 
+### 5. Quiet 
+* silent
+
+### 6. Quite
+* few
+
+### 7. Pedestrian
+* ordinary or unimaginative
 
 
 # ADDITIONAL WORDS 
 
 * GREEN GROSSER : vegitables seller
-* FISHMONGER : fisherman
+* FISHMONGER : fish seller
 * FLOWERIST : flower seller
 * SNEEZING : thummal
 * COUGHING : chuma
@@ -50,6 +66,7 @@
 * Hangry : hungry and angry
 * breanch : breakfast and lounch
 * chillax : chill & relax
+* Infotainment : information & entirtainment
 
 
 # idam
