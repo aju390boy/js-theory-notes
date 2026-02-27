@@ -1,6 +1,9 @@
 
 # FORMAL WORDS (respectful, professional, structured)
 
+
+### commins 
+
 ### 1. mitigate(reduce the effect of something)
 * We should mitigate the risk before deploying to production
 
@@ -71,6 +74,11 @@
 
 # idam
 * Hit the books : study hard
+* on the ball
+* Think on your feet : 
+
+# Phrases
+* Circle back : Talk about / handle this later
 
 
 # TIPS AND TRICKS
@@ -81,7 +89,7 @@
 
 ### 2. Jewellery : jool-ry
 
-### 3. ROW VS OARS
+### 3. row vs oars
 * Oars : Oars are long sticks used to move a boat in water.
 * Row : A row means a straight line of things.
 

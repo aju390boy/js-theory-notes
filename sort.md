@@ -160,58 +160,40 @@ return [...[1, 2, 3, 4], 5, ...[6, 7, 8, 9]];
 ## Method 2
 
 ```js
-// arr: the array we are sorting
-// low: the starting index of the chunk we are looking at
-// high: the ending index of the chunk we are looking at
-function quickSortPro(arr, low = 0, high = arr.length - 1) {
-  
-  // Base Case: If low is NOT less than high, it means our chunk has 
-  // 1 or 0 items. A chunk of 1 item is already sorted!
-  if (low < high) {
-    
-    // PARTITION: This is the heavy lifter. 
-    // It picks a pivot, puts smaller stuff left, bigger stuff right,
-    // and returns the EXACT final index where the pivot landed.
-    const pivotIndex = partition(arr, low, high);
-    
-    // RECURSION: Now sort the left chunk (everything before the pivot)
-    quickSortPro(arr, low, pivotIndex - 1);
-    
-    // RECURSION: And sort the right chunk (everything after the pivot)
-    quickSortPro(arr, pivotIndex + 1, high);
-  }
+function quickSort(arr, low = 0, high = arr.length - 1) {
+    if (low >= high) return;
 
-  // Return the same array we started with (it is now modified/sorted)
-  return arr;
+    let pivotIndex = partition(arr, low, high);
+
+    quickSort(arr, low, pivotIndex);
+    quickSort(arr, pivotIndex + 1, high);
+
+    return arr;
 }
 
-// The Swapping Function
 function partition(arr, low, high) {
-  // 1. Pick the last item in our chunk as the Boss (Pivot)
-  const pivot = arr[high];
-  
-  // 2. 'i' is our tracker for the "smaller numbers" club.
-  // It starts exactly one step BEFORE our chunk begins.
-  let i = low - 1;
+    // Random pivot selection
+    let randomIndex = Math.floor(Math.random() * (high - low + 1)) + low;
+    let pivot = arr[randomIndex];
 
-  // 3. 'j' scans through the chunk from left to right
-  for (let j = low; j < high; j++) {
-    
-    // 4. If we find a number smaller than our Boss...
-    if (arr[j] < pivot) {
-      i++; // Move our "smaller numbers" tracker forward
-      
-      // SWAP: Trade the places of the item at 'i' and the item at 'j'
-      // This throws the smaller number to the left side!
-      [arr[i], arr[j]] = [arr[j], arr[i]]; 
+    let i = low - 1;
+    let j = high + 1;
+
+    while (true) {
+        do {
+            i++;
+        } while (arr[i] < pivot);
+
+        do {
+            j--;
+        } while (arr[j] > pivot);
+
+        if (i >= j) return j;
+
+        [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-  }
-
-  // 5. The loop is done. All smaller numbers are on the left.
-  // Now, put the Boss (pivot) right after the last small number.
-  [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-
-  // 6. Tell the main function exactly where the Boss landed.
-  return i + 1;
 }
+
+let arr = [3, 1, 9, 6, 4, 2, 5];
+console.log(quickSort(arr));
 ```
