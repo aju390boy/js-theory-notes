@@ -4,6 +4,8 @@
 
 * The most important rule to remember when reading this code: If the head ever changes, the tail must be updated to point to the new head!
 
+### THE CIRCULAR NODE
+
 ```js 
 class Node {
   constructor(value) {
@@ -11,7 +13,10 @@ class Node {
     this.next = null;
   }
 }
+```
+### THE CIRCULAR LINKEDLIST
 
+```js
 class CircularLinkedList {
   constructor() {
     this.head = null;
