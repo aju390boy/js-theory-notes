@@ -57,3 +57,72 @@ h.set(20,'manu')
 
 h.print()
 ```
+
+## Questions 
+
+* Two Sum
+```js
+function prime(nums,target){
+    const map=new Map();
+    for(let i=0;i<nums.length;i++){
+        const value= target-nums[i];
+        if(map.has(value)){
+            return [map.get(value),i];
+        }
+        map.set(nums[i],i)
+    }
+    return [];
+}
+let nums=[3,2,6,8]
+console.log(prime(nums,7))
+```
+
+* First Non-Repeating Character
+```js
+function firstUniqChar(s) {
+  const frequencyMap = {};
+
+  // Build frequency map
+  for (let char of s) {
+    frequencyMap[char] = (frequencyMap[char] || 0) + 1;
+  }
+
+  // Find the first char with count 1
+  for (let i = 0; i < s.length; i++) {
+    if (frequencyMap[s[i]] === 1) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+// Test
+console.log(firstUniqChar("javascriptisawesome")); // 0 (j)
+console.log(firstUniqChar("aabb")); // -1
+```
+
+* Group Anagrams
+```js
+function groupAnagrams(strs) {
+  const groups = new Map();
+
+  for (let str of strs) {
+    // Sort string to create a uniform key
+    const sortedKey = str.split('').sort().join('');
+    
+    if (!groups.has(sortedKey)) {
+      groups.set(sortedKey, []);
+    }
+    
+    groups.get(sortedKey).push(str);
+  }
+
+  return Array.from(groups.values());
+}
+
+// Test
+const words = ["eat", "tea", "tan", "ate", "nat", "bat"];
+console.log(groupAnagrams(words)); 
+// [["eat","tea","ate"],["tan","nat"],["bat"]]
+```
