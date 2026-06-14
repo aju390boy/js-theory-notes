@@ -75,7 +75,7 @@ useState is a special function in React that lets you store data that can change
 * When state changes → React automatically updates the UI
 
 
-# 🚀 Now Let's Add Search + Filter to Your App (check mini-store-react-2 folder)
+## 🚀 Now Let's Add Search + Filter to Your App (check mini-store-react-2 folder)
 
  ### What Just Happened? (Explanation)
 
@@ -140,7 +140,7 @@ const filteredProducts = products.filter((product) => {
 
 // When state changes → filtered list changes → UI updates automatically!
 ```
-## 🎯 Key Points About useState
+### 🎯 Key Points About useState
 
 ```js
 | Concept                 | What It Means                                           |
@@ -153,7 +153,7 @@ const filteredProducts = products.filter((product) => {
 ```
 
 
-#  Let's add cart functionality to your app (check mini-store-react-3 folder)
+## 🚀 Let's add cart functionality to your app (check mini-store-react-3 folder)
 
 * Add to cart button that works
 * Cart count in navbar showing how many items
@@ -235,7 +235,7 @@ const addToCart = (product) => {
 
 // Shows all items in cart with quantity and total price.
 ```
-## ✅ What You Learned
+### ✅ What You Learned
 
 ```js
 | Concept            | What It Does                              |
