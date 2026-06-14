@@ -75,9 +75,7 @@ useState is a special function in React that lets you store data that can change
 * When state changes → React automatically updates the UI
 
 
-# 🚀 Now Let's Add Search + Filter to Your App
-
-* check mini-store-react-2 folder!
+# 🚀 Now Let's Add Search + Filter to Your App (check mini-store-react-2 folder)
 
  ### What Just Happened? (Explanation)
 
@@ -154,6 +152,102 @@ const filteredProducts = products.filter((product) => {
 | State updates are async | React batches updates for performance                   |
 ```
 
+
+#  Let's add cart functionality to your app (check mini-store-react-3 folder)
+
+* Add to cart button that works
+* Cart count in navbar showing how many items
+* Cart array that stores selected products
+This is a real-world example of using useState with arrays!
+
+### What Just Happened? (Explanation)
+
+**1** We Added Cart State
+
+```js 
+const [cart, setCart] = useState([])
+
+// cart = array that stores all products user added
+// Starts as empty array []
+// When you add items, it grows
+```
+**2** We Created addToCart Function
+
+```js
+const addToCart = (product) => {
+  const existingProduct = cart.find(item => item.id === product.id)
+
+  if (existingProduct) {
+    // If exists, increase quantity
+    const updatedCart = cart.map(item =>
+      item.id === product.id
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+    setCart(updatedCart)
+  } else {
+    // If new, add to cart with quantity 1
+    setCart([...cart, { ...product, quantity: 1 }])
+  }
+}
+
+// Checks if product is already in cart using .find()
+// If exists → increases quantity using .map()
+// If new → adds to cart using [...cart, newItem]
+// Calls setCart() to update state and re-render
+```
+**3**  We Passed Function to ProductCard
+
+```js
+<ProductCard
+  product={product}
+  onAddToCart={addToCart}
+/>
+
+// Now ProductCard can call onAddToCart(product) when button is clicked.
+```
+**4**  ProductCard Calls the Function
+
+```js
+<button onClick={() => onAddToCart(product)}>Add to Cart</button>\
+
+// When you click → onAddToCart(product) runs → addToCart updates cart state.
+```
+**5** Cart Count Updates Automatically
+
+```js
+<Navbar cartCount={cart.reduce((sum, item) => sum + item.quantity, 0)} />
+
+// reduce() loops through cart and adds all quantities
+// When cart changes → Navbar re-renders with new count
+
+```
+**6** Cart Display Shows Items
+
+```js
+{cart.map((item) => (
+  <div key={item.id} className="cart-item">
+    <span>{item.name}</span>
+    <span>₹{item.price} × {item.quantity}</span>
+    <span>₹{item.price * item.quantity}</span>
+  </div>
+))}
+
+// Shows all items in cart with quantity and total price.
+```
+## ✅ What You Learned
+
+```js
+| Concept            | What It Does                              |
+| ------------------ | ----------------------------------------- |
+| useState([])       | Store an array in state                   |
+| cart.find()        | Check if item exists in array             |
+| cart.map()         | Update existing items                     |
+| [...cart, newItem] | Add new item to array                     |
+| setCart()          | Update state and re-render UI             |
+| Passing functions  | Give parent's function to child component |
+| reduce()           | Calculate total from array                |
+```
 
 🚀 My Recommendation for You
 Learn this order:
