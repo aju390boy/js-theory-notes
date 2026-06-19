@@ -249,6 +249,8 @@ const addToCart = (product) => {
 | reduce()           | Calculate total from array                |
 ```
 
+
+## 🚀 Let's add React Router to create multiple pages(check mini-store-react-3 folder)
 🚀 My Recommendation for You
 Learn this order:
 
