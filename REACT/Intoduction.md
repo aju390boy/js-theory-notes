@@ -250,7 +250,10 @@ const addToCart = (product) => {
 ```
 
 
-## 🚀 Let's add React Router to create multiple pages(check mini-store-react-3 folder)
+## 🚀 Let's add React Router to create multiple pages(check mini-store-react-4 folder)
+
+* Home , Cart , checkout page...
+* This is how you navigate between pages without reloading in React apps.
 🚀 My Recommendation for You
 Learn this order:
 
