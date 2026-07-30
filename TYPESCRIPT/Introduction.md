@@ -6,3 +6,6 @@
 * variable name is 'a' and unused,gets an error but we can use like '_a'.
 
 ## TSC
+
+
+## GENERICS
