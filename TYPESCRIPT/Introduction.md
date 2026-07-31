@@ -1,4 +1,6 @@
+# TYPESCRIPT
 
+* In simple words : Javascript with type checking and code complation,refactoring,new features....
 
 ## Unused Variable
 
