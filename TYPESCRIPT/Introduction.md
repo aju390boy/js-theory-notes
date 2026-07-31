@@ -19,7 +19,20 @@
 * Javascript
 * Python
 * Ruby
-*
+
+## Buit-in Types
+
+## JavaScript vs TypeScript Data Types
+
+| JavaScript | TypeScript |
+|------------|------------|
+| Number | `any` |
+| String | `unknown` |
+| Boolean | `enum` |
+| `null` | `never` |
+| Object | `tuple` |
+| `undefined` |  |
+
 ## TSC
 
 
