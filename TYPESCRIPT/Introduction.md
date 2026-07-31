@@ -15,12 +15,10 @@
 * JAVA
 * C++
 
-## Statically Typed languages
+## Dynamically Typed languages
 * Javascript
 * Python
 * Ruby
-
-## Buit-in Types
 
 ## JavaScript vs TypeScript Data Types
 
@@ -33,6 +31,15 @@
 | Object | `tuple` |
 | `undefined` |  |
 
+
+## Infer OR Type Inference
+Type inference means TypeScript automatically guesses the type of a variable based on the value you assign to it. So, you don't always need to write the type yourself.
+
+```ts
+let name = "Ajith";
+//TypeScript automatically understands:
+let name: string = "Ajith";
+```
 ## TSC
 
 
