@@ -6,6 +6,7 @@
 
 ## Better IntelliSense (autocomplete)
 TypeScript also provides better IntelliSense by suggesting only the valid built-in methods and properties for that type, helping catch errors while coding.
+Example
 ```ts
 let name: string = "Ajith";
 ```
