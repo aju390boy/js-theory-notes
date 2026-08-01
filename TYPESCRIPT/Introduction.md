@@ -98,7 +98,7 @@ let orderStatus: Status = "success";
 | Union Type | Literal Type |
 |------------|------------|
 | Allows multiple types | `Allows only specific values` |
-| Example: string | number | `Example: "yes" | "no"` |
+| Example string | number | `Example: yes  no` |
 | Stores different data types | `Restricts the allowed values` |
 
 ```ts
