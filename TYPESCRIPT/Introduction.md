@@ -2,6 +2,25 @@
 
 * In simple words : Javascript with type checking and code complation,refactoring,new features....
 
+## TSC
+
+## Better IntelliSense (autocomplete)
+TypeScript also provides better IntelliSense by suggesting only the valid built-in methods and properties for that type, helping catch errors while coding.
+```ts
+let name: string = "Ajith";
+```
+When you type:
+```ts
+name.
+```
+VS Code suggests only string methods, such as:
+* toUpperCase()
+* toLowerCase()
+* trim()
+* slice()
+* includes()
+It won't suggest methods that don't belong to strings.
+
 ## Unused Variable
 
 * TypeScript compiler catches unused variables to prevent dead code from reaching production.
@@ -76,7 +95,9 @@ let id: string | number;
 
 id = "EMP101";
 id = 101;
+
 // Another example
+
 function printId(id: string | number) {
   console.log(id);
 }
@@ -89,7 +110,9 @@ let direction: "left" | "right";
 direction = "left";   // ✅
 direction = "right";  // ✅
 direction = "up";     // ❌ Error
+
 //Another example
+
 type Status = "pending" | "success" | "failed";
 
 let orderStatus: Status = "success";
@@ -146,11 +169,26 @@ let person: User = {
 Type inference means TypeScript automatically guesses the type of a variable based on the value you assign to it. So, you don't always need to write the type yourself.
 ```ts
 let name = "Ajith";
+
 //TypeScript automatically understands:
+
 let name: string = "Ajith";
 ```
 
-## TSC
+## Array
+An array in TypeScript is the same as a JavaScript array, but all elements must follow the specified type.
+The only difference is that TypeScript checks the type of the array elements, helping catch errors during development.
+```ts
+let numbers: number[] = [10, 20, 30];
+
+//or
+
+let names: Array<string> = ["Ajith", "Arun", "Rahul"];
+
+//or
+
+let data: (string | number)[] = ["Ajith", 22, "MERN"];
+```
 
 
 ## GENERICS
