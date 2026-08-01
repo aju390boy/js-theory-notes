@@ -21,7 +21,9 @@ VS Code suggests only string methods, such as:
 * trim()
 * slice()
 * includes()
+
 It won't suggest methods that don't belong to strings.
+Also same as number,Array,object,etc..
 
 ## Unused Variable
 
