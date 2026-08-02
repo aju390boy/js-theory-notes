@@ -71,6 +71,8 @@ if (typeof value === "string") {
 ```
 ### enum
 enum is used to create a group of named constant values.
+It improves code readability, type safety, and prevents invalid values by restricting a variable to a predefined set of constants.
+Provides auto-completion in editors,And it is commonly used for statuses, roles, and categories.
 ```ts
 enum Status {
   Pending,
@@ -89,6 +91,8 @@ function showError(message: string): never {
 ```
 ### tuple
 A tuple stores a fixed number of values with specific types in a specific order.
+A tuple is a special type of array in TypeScript where the number of elements and the type of each element are fixed.
+A tuple cannot exist without an array because tuples are represented using array syntax ([]).
 ```ts
 let user: [string, number] = ["Ajith", 22];
 ```
@@ -193,6 +197,87 @@ let names: Array<string> = ["Ajith", "Arun", "Rahul"];
 
 let data: (string | number)[] = ["Ajith", 22, "MERN"];
 ```
+## Function
+A function in TypeScript is the same as a JavaScript function, but with type annotations for parameters and return values. 
+This helps catch errors during development and provides better code completion and documentation.
+```ts
+function add(a: number, b: number): number {
+  return a + b;
+}
 
+add(10, 20); // 30
+```
+Here:
+* a: number → parameter type
+* b: number → parameter type
+* : number → return type
+
+## Features of Functions in TypeScript
+
+### 1. Typed Parameters
+Specify the type of each parameter.
+```ts
+function greet(name: string) {
+  return `Hello ${name}`;
+}
+```
+### 2. Return Type
+Specify what type the function returns.
+```ts
+function square(num: number): number {
+  return num * num;
+}
+```
+### 3. Optional Parameters (?)
+```ts
+function greet(name: string, age?: number) {
+  console.log(name, age);
+}
+
+greet("Ajith");
+greet("Ajith", 22);
+```
+### 4. Default Parameters
+```ts
+function greet(name: string = "Guest") {
+  console.log(name);
+}
+
+greet();       // Guest
+greet("Ajith");
+```
+### 5. Rest Parameters
+```ts
+function total(...numbers: number[]): number {
+  return numbers.reduce((sum, n) => sum + n, 0);
+}
+
+total(10, 20, 30);
+```
+### 6. Arrow Functions
+```ts
+const divide = (a: number, b: number): number => {
+  return a / b;
+};
+```
+### 7. Void Functions
+```ts
+function printMessage(msg: string): void {
+  console.log(msg);
+}
+```
+### 8. Never Return Type
+A function with the never return type never returns a value to its caller.
+Because the function either:throws an error, or runs forever (infinite loop).
+Since execution never reaches the caller again, TypeScript says the return type is never,"The function never finishes".
+```ts
+function throwError(message: string): never {
+  throw new Error(message);
+}
+```
+### 9. Function Type
+
+
+### 10. Function Overloading
 
 ## GENERICS
