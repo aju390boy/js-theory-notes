@@ -26,7 +26,6 @@ let name: string = "Ajith";
 
 console.log(name);
 ```
-
 ## Step 6: Compile TypeScript
 Run:
 ```sh
@@ -40,3 +39,5 @@ node index.js
 ```
 Output : Ajith
 
+### Trick 
+In keyboard : alt+up arrow = to move selected paragraph to upwards
