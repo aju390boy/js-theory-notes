@@ -276,7 +276,42 @@ function throwError(message: string): never {
 }
 ```
 ### 9. Function Type
+A function type is a blueprint or signature of a function that tells TypeScript what kind of function is allowed.
+It specifies what parameters the function should accept and what type of value it should return.
+This is a function type declaration,It is not the function itself.
 
+This line only declares the variable and its type,The variable doesn't contain a function yet.
+```ts
+let add: (a: number, b: number) => number;
+```
+It's like this:
+```ts
+let age: number;
+```
+Definitions of that function:
+```ts
+add = function(a, b) {
+    return a + b;
+};
+```
+OR
+```ts
+add = (a, b) => a + b;
+```
+Function Type mostly use in Callbacks:
+```ts
+function calculate(
+    operation: (a: number, b: number) => number
+) {
+    console.log(operation(10, 20));
+}
+```
+Now you can pass
+```ts
+calculate((a, b) => a + b);
+
+calculate((a, b) => a * b);
+```
 
 ### 10. Function Overloading
 
