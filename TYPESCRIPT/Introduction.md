@@ -314,5 +314,8 @@ calculate((a, b) => a * b);
 ```
 
 ### 10. Function Overloading
+Function overloading is a TypeScript feature that allows one function to have multiple valid signatures,while using only one implementation.
+Function overloading tells TypeScript that a function can be called in different ways.
+Function overloading is preferred over a union type(|) when the return type depends on the parameter type. While union types(|) allow multiple input types, overloads let TypeScript infer a more specific return type for each valid function signature.
 
 ## GENERICS

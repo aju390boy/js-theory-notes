@@ -39,5 +39,6 @@ node index.js
 ```
 Output : Ajith
 
-### Trick 
+### Keyboard Tricks 
 In keyboard : alt+up arrow = to move selected paragraph to upwards
+In keyboard : alt+shift+up arrow OR down arrow= copy selected paragraph
