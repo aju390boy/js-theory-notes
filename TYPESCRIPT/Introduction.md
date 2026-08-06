@@ -318,4 +318,61 @@ Function overloading is a TypeScript feature that allows one function to have mu
 Function overloading tells TypeScript that a function can be called in different ways.
 Function overloading is preferred over a union type(|) when the return type depends on the parameter type. While union types(|) allow multiple input types, overloads let TypeScript infer a more specific return type for each valid function signature.
 
+Suppose we write this with a union(|).
+```ts
+function getUser(value: number | string) {
+    if (typeof value === "number") {
+        return "One User";
+    }
+
+    return ["User1", "User2"];
+}
+```
+Now imagine you call it.
+```ts
+const result = getUser(1);
+```
+What is the type of result?
+You might think : 
+```ts
+string
+```
+But TypeScript says:
+```ts
+string | string[]
+```
+Why?
+Because the function could return either one.TypeScript only sees the whole function, not the path you're taking.
+Even though you know it's actually a string.
+
+Now Let's Use Overloading
+```ts
+function getUser(id: number): string;
+function getUser(email: string): string[];
+
+function getUser(value: number | string) {
+    if (typeof value === "number") {
+        return "One User";
+    }
+
+    return ["User1", "User2"];
+}
+```
+```ts
+const result1 = getUser(1);
+```
+TypeScript knows
+```ts
+result1 // string ✅
+```
+and
+```ts
+const result2 = getUser("admin@gmail.com");
+```
+TypeScript knows
+```ts
+result2 // string[] ✅
+```
+That's the big advantage of overloads.
+
 ## GENERICS
