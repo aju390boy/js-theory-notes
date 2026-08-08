@@ -377,3 +377,4 @@ That's the big advantage of overloads.
 
 ## OOPs
 ## GENERICS
+## Interface
