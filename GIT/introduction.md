@@ -13,7 +13,7 @@ Git is a distributed version control system used to track changes in source code
 
 ## Complete Command List
 
-```js 
+```sh 
 git init
 git add .
 git commit -m "Initial commit"
