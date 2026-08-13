@@ -1,5 +1,5 @@
 ## Git vs GitHub
-
+Git is a distributed version control system used to track changes in source code locally, while GitHub is a cloud-based platform used to host Git repositories and collaborate with other developers.
 
 | Git | GitHub |
 |------------|------------|
@@ -9,7 +9,7 @@
 | Works locally | `Lets you access/share repositories from anywhere` |
 | Provides commands like git add, git commit, git branch | `Provides collaboration, pull requests, issues, Actions, etc.` |
 | Doesn't require GitHub | `Uses Git repositories` |
-
+| e.g:Local Repository | `e.g:Remote Repository` |
 
 ## Complete Command List
 
