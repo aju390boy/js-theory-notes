@@ -375,6 +375,47 @@ result2 // string[] ✅
 ```
 That's the big advantage of overloads.
 
+## Type alias
+A type alias is a TypeScript feature that allows us to create a custom name for an existing type or a combination of types. 
+It improves code readability, reusability, and maintainability.
+* Type alias = giving a reusable name to a type.
+```ts
+type Age = number;
+// then
+let myAge: Age = 22;
+```
+OR
+```ts
+type User = {
+    name: string;
+    age: number;
+};
+```
+Here User or Age is just a name for that type, not an actual object or variable.
+
+### Think of it like a shortcut name
+```ts
+type User = {
+    name: string;
+    age: number;
+};
+```
+"Whenever I say User, I mean this entire structure."
+So:
+```ts
+let user: User;
+```
+is basically the same as:
+```ts
+let user: {
+    name: string;
+    age: number;
+};
+```
+A type alias does not create a new runtime value such as an object or variable. It gives a name to a type definition, allowing that type to be reused. 
+Type aliases are used only by TypeScript's type system and do not exist at runtime.
+
+
 ## OOPs
 ## GENERICS
 ## Interface
