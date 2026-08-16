@@ -166,6 +166,9 @@ role = "guest";   // ❌ Error
 * Union Type → One variable, multiple types.
 * Literal Type → One variable, fixed allowed values.
 
+### Type Assertion
+
+
 ## Custom Types
 TypeScript allows developers to create reusable custom types.
 
