@@ -110,6 +110,26 @@ function printId(id: string | number) {
   console.log(id);
 }
 ```
+### Intersection Type
+An intersection type combines two or more types into a single type using the & operator. The resulting value must satisfy all the combined types.
+```ts
+type A = {
+    name: string;
+};
+
+type B = {
+    age: number;
+};
+
+type Person = A & B;
+```
+Now Person must contain both name and age.
+```ts
+const user: Person = {
+    name: "Ajith",
+    age: 22
+};
+```
 ### Literal Type
 A Literal Type allows a variable to store only specific values.
 ```ts
@@ -375,7 +395,7 @@ result2 // string[] ✅
 ```
 That's the big advantage of overloads.
 
-## Type alias
+## Type Alias
 A type alias is a TypeScript feature that allows us to create a custom name for an existing type or a combination of types. 
 It improves code readability, reusability, and maintainability.
 * Type alias = giving a reusable name to a type.
@@ -414,6 +434,7 @@ let user: {
 ```
 A type alias does not create a new runtime value such as an object or variable. It gives a name to a type definition, allowing that type to be reused. 
 Type aliases are used only by TypeScript's type system and do not exist at runtime.
+
 
 
 ## OOPs
