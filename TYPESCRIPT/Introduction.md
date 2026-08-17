@@ -167,6 +167,24 @@ role = "guest";   // ❌ Error
 * Literal Type → One variable, fixed allowed values.
 
 ### Type Assertion
+Type assertion is a TypeScript feature used during the compilation phase to tell the TypeScript compiler to treat a value as a specific type when the developer knows more about that value's type than the compiler does. It does not change the actual value or its runtime type.
+Example 1:
+```ts
+let value: unknown;
+value = "ajith"; // compile phase:value is string ,but its type still unknown
+console.log(value.charAt(0)); // ERROR
+```
+Example 2:
+```ts
+let value: unknown; 
+value = "ajith"; // compile phase:value is string ,but its type still unknown
+
+let name = value as string; // compile phase:name's value is string and its type also string.
+
+console.log(name.charAt(0)); // SUCCESS
+```
+* In both cases, the runtime type will be string. ✅
+TypeScript is statically typed, so during the compilation phase the tsc compiler checks a variable based on its static type. Even if an unknown variable currently contains a string at runtime, TypeScript still treats it as unknown unless the type is narrowed or asserted. Therefore, string methods cannot be used directly. A type assertion such as value as string tells the compiler to treat that expression as a string, allowing string operations. The assertion does not change the actual runtime value or perform any conversion.
 
 
 ## Custom Types
