@@ -89,6 +89,17 @@ function showError(message: string): never {
   throw new Error(message);
 }
 ```
+### nullable type
+Sometimes a value may be absent initially, so we allow null as one of its possible types. Later, when the actual data becomes available, the variable can hold that data instead of null. We usually represent this using a union type.
+```ts
+let user: User | null = null;
+//initially : user → null
+user = {
+    name: "Ajith",
+    age: 22
+};
+// Later: user → User object
+```
 ### tuple
 A tuple stores a fixed number of values with specific types in a specific order.
 A tuple is a special type of array in TypeScript where the number of elements and the type of each element are fixed.
