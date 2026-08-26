@@ -477,3 +477,4 @@ Type aliases are used only by TypeScript's type system and do not exist at runti
 ## Narrowing
 ## Mixins
 ## Decorators
+## Duck Typing
