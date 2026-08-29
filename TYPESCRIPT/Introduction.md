@@ -469,7 +469,10 @@ Type aliases are used only by TypeScript's type system and do not exist at runti
 
 
 
-## OOPs
+# OOPs
+
+## Phase 1: The Mindset Shift – Nominal vs. Structural Typing
+ 
 ## GENERICS
 ## Interface
 ## Class
