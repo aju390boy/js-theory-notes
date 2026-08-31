@@ -6,3 +6,5 @@
 ## JavaScript’s prototype-based runtime
 * At runtime, JavaScript uses objects and prototype chains for inheritance and method lookup, even when we write modern class syntax.
 * JavaScript has a prototype-based runtime where objects inherit properties and methods through a prototype chain; JavaScript class syntax is built on top of this prototype mechanism.
+
+## this keyword
