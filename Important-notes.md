@@ -32,4 +32,4 @@ a.print();
 ### The Core Theory in 3 Rules
 * Isolation: It ensures that this.name = 'ajith' only affects the specific variable a, without leaking data or breaking other variables.
 * Shared Memory: It ensures that the print() function is stored exactly once in memory, rather than being duplicated for every new user you create.
-* The Strict Rule: JavaScript enforces new on classes to prevent you from accidentally running a class like a normal function, which would crash your application or corrupt global data.
+* The Strict Rule: JavaScript enforces new on classes to prevent you from accidentally running a class like a normal function, which would crash your application or corrupt global data
