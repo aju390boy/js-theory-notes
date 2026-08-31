@@ -8,3 +8,13 @@
 * JavaScript has a prototype-based runtime where objects inherit properties and methods through a prototype chain; JavaScript class syntax is built on top of this prototype mechanism.
 
 ## this keyword
+
+```ts
+class User {
+    name: string;
+
+    greet(): void {
+        console.log("Hello");
+    }
+}
+```
