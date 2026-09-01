@@ -472,7 +472,7 @@ Type aliases are used only by TypeScript's type system and do not exist at runti
 # OOPs
 
 ## Phase 1: The Mindset Shift – Nominal vs. Structural Typing
-### Duck Typing
+### DUCK TYPING
 "If it walks like a duck and quacks like a duck, I will treat it like a duck."
 
 In Java, the class name is the most important thing. Even if two classes have the exact same variables inside, Java treats them as 100% different because Java is a nominal typed language (names matter).
@@ -532,7 +532,7 @@ let badUser: User = {
 };
 ```
 
-### Bypassing Inheritance
+### BYPASSING INHERITANCE
 Duck typing is the rule. Bypassing inheritance is the superpower you get because of that rule.
 
 To make a function accept either Class A or Class B, Java forces you to create an interface and use the implements keyword.
