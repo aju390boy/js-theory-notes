@@ -479,7 +479,7 @@ In Java, the class name is the most important thing. Even if two classes have th
 
 In TypeScript, the type of an object is determined by its shape (its properties and methods) rather than its name. This is called structural typing, or Duck Typing. If a plain object or a different class has the exact properties required by a type, TypeScript considers it a perfect match—even if they have different names or you never used the new keyword.
 
-* Example 1: Class A and Class B are Interchangeable
+### Example 1: Class A and Class B are Interchangeable
 Because TypeScript only checks the shape, two completely different classes can be mixed if their internal structure is exactly the same.
 ```ts
 // Class A
@@ -498,7 +498,7 @@ class CardPayment {
 // In TypeScript: SUCCESS! Both have 'amount' and 'currency'.
 let myPayment: CashPayment = new CardPayment();
 ```
-* Example 2: Plain Objects without the new keyword
+### Example 2: Plain Objects without the new keyword
 When you fetch data from a database or API, it comes as a plain object. Duck typing allows you to safely check that plain data against a Class type without ever needing to build a real class object using new.
 ```ts
 class Product {
@@ -516,7 +516,7 @@ let dbData = {
 // It perfectly fits the shape of the Product class.
 let myItem: Product = dbData;
 ```
-* Example 3: Error Prevention (The Shape Must Match)
+### Example 3: Error Prevention (The Shape Must Match)
 Duck typing is a strict rule to prevent runtime crashes. If the object you are passing is missing even one required piece of the shape, TypeScript will instantly block it.
 ```ts
 class User {
