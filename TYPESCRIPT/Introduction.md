@@ -534,6 +534,55 @@ let badUser: User = {
 
 ### Bypassing Inheritance
 Duck typing is the rule. Bypassing inheritance is the superpower you get because of that rule.
+
+To make a function accept either Class A or Class B, Java forces you to create an interface and use the implements keyword.
+```java
+// The Interface creates the shared "name" for nominal typing
+interface Order {
+    void process(); 
+}
+
+class Online implements Order {
+    public void process() { System.out.println("online..."); }
+}
+
+class Offline implements Order {
+    public void process() { System.out.println("offline..."); }
+}
+
+public class Main {
+    // Now you only need one method!
+    public static void processOrder(Order myOrder) {
+        myOrder.process(); 
+    }
+}
+```
+Thanks to Duck Typing, you bypass inheritance entirely. No extends or implements needed! If two classes just happen to have the same shape, they work together automatically. Even 3rd-party classes work instantly without touching their code, as long as the shape matches.
+```java
+// Class A (100% independent)
+class OnlineOrder {
+  process() { console.log("Processing online..."); }
+}
+
+// Class B (100% independent)
+class StoreOrder {
+  process() { console.log("Processing in-store..."); }
+}
+
+// This function doesn't care about class names or interfaces.
+// It just asks: "Does the object have a process() method?"
+function handleOrder(order: { process: () => void }) {
+  order.process();
+}
+
+let webOrder = new OnlineOrder();
+let shopOrder = new StoreOrder();
+
+// SUCCESS! 
+// Both work perfectly without ever using "extends" or "implements"!
+handleOrder(webOrder);
+handleOrder(shopOrder);
+```
 ### Compile time vs Runtime
 TypeScript types, interfaces, and structural checks only exist at compile-time. At runtime, the JavaScript engine executes the code blindly, with no memory of the TypeScript rules.
  
