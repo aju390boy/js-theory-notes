@@ -472,6 +472,12 @@ Type aliases are used only by TypeScript's type system and do not exist at runti
 # OOPs
 
 ## Phase 1: The Mindset Shift – Nominal vs. Structural Typing
+### Duck Typing
+
+### Bypassing Inheritance
+Duck typing is the rule. Bypassing inheritance is the superpower you get because of that rule.
+### Compile time vs Runtime
+TypeScript types, interfaces, and structural checks only exist at compile-time. At runtime, the JavaScript engine executes the code blindly, with no memory of the TypeScript rules.
  
 ## GENERICS
 ## Interface
