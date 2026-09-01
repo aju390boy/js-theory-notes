@@ -474,7 +474,7 @@ Type aliases are used only by TypeScript's type system and do not exist at runti
 ## Phase 1: The Mindset Shift – Nominal vs. Structural Typing
 
 >[!NOTE]
-> **DUCK TYPING** ("If it walks like a duck and quacks like a duck, I will treat it like a duck.")
+> DUCK TYPING ("If it walks like a duck and quacks like a duck, I will treat it like a duck.")                          
 In Java, the class name is the most important thing. Even if two classes have the exact same variables inside, Java treats them as 100% different because Java is a nominal typed language (names matter).
 
 In TypeScript, the type of an object is determined by its shape (its properties and methods) rather than its name. This is called structural typing, or Duck Typing. If a plain object or a different class has the exact properties required by a type, TypeScript considers it a perfect match—even if they have different names or you never used the new keyword.
