@@ -33,3 +33,22 @@ a.print();
 * Isolation: It ensures that this.name = 'ajith' only affects the specific variable a, without leaking data or breaking other variables.
 * Shared Memory: It ensures that the print() function is stored exactly once in memory, rather than being duplicated for every new user you create.
 * The Strict Rule: JavaScript enforces new on classes to prevent you from accidentally running a class like a normal function, which would crash your application or corrupt global data
+
+### Power of reduce
+```js
+let result = nums.reduce((acc, val) => {
+
+    // Increase frequency
+    acc.freq[val] = (acc.freq[val] || 0) + 1;
+
+    // Check if current value has the highest frequency
+    if (acc.freq[val] > acc.max) {
+        acc.max = acc.freq[val];
+        acc.majority = val;
+    }
+
+    return acc;
+
+}, { freq: {}, max: 0, majority: null });
+
+console.log(result.majority);```
