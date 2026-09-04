@@ -36,6 +36,9 @@ a.print();
 
 ### Power of reduce
 ```js
+let nums = [2, 2, 1, 1, 1, 2, 2];
+```
+```js
 let result = nums.reduce((acc, val) => {
 
     // Increase frequency
@@ -51,4 +54,16 @@ let result = nums.reduce((acc, val) => {
 
 }, { freq: {}, max: 0, majority: null });
 
-console.log(result.majority);```
+console.log(result.majority);
+```
+Result:
+```js
+{
+    freq: {
+        1: 3,
+        2: 4
+    },
+    max: 4,
+    majority: 2
+}
+```
