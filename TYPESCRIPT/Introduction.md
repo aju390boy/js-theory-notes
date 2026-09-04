@@ -584,6 +584,64 @@ handleOrder(shopOrder);
 ### Compile time vs Runtime
 TypeScript types, interfaces, and structural checks only exist at compile-time. At runtime, the JavaScript engine executes the code blindly, with no memory of the TypeScript rules.
  
+## Phase 2: Interfaces vs. Type Aliases
+In Java, you only have interface to define rules for objects.
+In TypeScript, you have two tools: interface and type. They do almost the exact same job (defining the shape of data), but they each have a unique superpower.
+
+### 1. interface (Best for Objects and Classes)                              
+The Concept: If you are defining the shape of an object (like a MongoDB document) or a Class, use interface. It feels very similar to Java.
+The Superpower (Declaration Merging): In TS, if you write the exact same interface name twice, TS automatically merges them together into one big interface. Java would throw a "duplicate name" error!
+```ts
+interface Product {
+  product_id: string;
+}
+// Later in the code... we write the exact same name!
+// TS merges them. Now Product MUST have both product_id AND price.
+interface Product {
+  price: number;
+}
+
+let helmet: Product = {
+  product_id: "688315c672e996419db3d747",
+  price: 8799
+};
+```
+### 2. type (Best for Specific Rules & Unions)                              
+The Concept: type can also describe objects, but its real job is handling things an interface cannot do.
+The Superpower (Union Types): type can use the | (OR) symbol to restrict data to exact values (like an Enum in Java, but much easier). An interface cannot do this.
+```ts
+// An interface CANNOT do this. Only 'type' can.
+type PaymentStatus = "PROCESSING" | "COMPLETED" | "FAILED";
+// SUCCESS
+let currentStatus: PaymentStatus = "PROCESSING";
+// ERROR! TS says: "PENDING is not assignable to PaymentStatus"
+// It catches the bug before the code even runs!
+let badStatus: PaymentStatus = "PENDING";
+```
+### 3. The implements keyword (The TS Twist)                                       
+The Concept: Just like Java, you can use class A implements B. But remember the Duck Typing rule from Phase 1! In Java, implements creates a strict family tree. In TypeScript, implements is just a spell-checker to make sure your class didn't forget a property. It does not change how the code runs at all.
+```ts
+interface Order {
+  total_amount: number;
+  process(): void;
+}
+// Works just like Java. 
+// It forces the VixorOrder class to have 'total_amount' and 'process()'.
+class VixorOrder implements Order {
+  total_amount = 27716.85;
+  process() {
+    console.log("Order processed");
+  }
+}
+```
+> [!NOTE]
+**The Golden Rule to Remember:**
+* Use interface for normal objects, classes, and database schemas.
+* Use type when you need an "OR" condition (|) or exact string matches.
+
+
+
+
 ## GENERICS
 ## Interface
 ## Class
