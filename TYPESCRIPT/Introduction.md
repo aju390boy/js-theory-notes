@@ -634,7 +634,7 @@ class VixorOrder implements Order {
   }
 }
 ```
-> [!NOTE]
+> [!TIP]
 **The Golden Rule to Remember:**
 * Use interface for normal objects, classes, and database schemas.
 * Use type when you need an "OR" condition (|) or exact string matches.
