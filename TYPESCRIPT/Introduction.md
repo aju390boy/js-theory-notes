@@ -737,3 +737,4 @@ payment.printReceipt(8799);   // Prints: Receipt for ₹8799
 ## Decorators
 ## Duck Typing
 ## inheritance
+## Abstraction
