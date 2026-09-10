@@ -797,6 +797,7 @@ let productResponse: ApiResponse<number[]> = {
 ## Interface
 ## Class
 ## Dependency Injection
+Dependency Injection is a scary word for a very simple rule: Do not use the new keyword inside your class.
 ## Narrowing
 ## Mixins
 ## Decorators
