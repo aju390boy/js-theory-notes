@@ -729,6 +729,71 @@ payment.printReceipt(8799);   // Prints: Receipt for ₹8799
 ```
 
 ## GENERICS
+**Generics** (<T>) act as a "blank space" or a placeholder for a type. They give you the extreme reusability of the any type, but with strict type checking. Instead of hardcoding whether a class or function should use a string or a number, you pass the type as a parameter when you actually call the function or create the object.
+* The <T> dynamically transforms into whatever type you pass it.
+
+### Example 1: Generic Function
+```ts
+// <T> tells TS: "I will tell you the type when I call this function."
+function makeArray<T>(item: T): T[] {
+  return [item];
+}
+
+// 1. We explicitly pass <string>. 'item' MUST be a string.
+let strArray = makeArray<string>("Helmet"); 
+
+// 2. We explicitly pass <number>. 'item' MUST be a number.
+let numArray = makeArray<number>(8799);
+
+// 3. TS Auto-Guessing (Inference): 
+// We didn't write <boolean>, but TS sees 'true' inside the () and guesses it!
+let boolArray = makeArray(true);
+```
+### Example 2: Generic Class
+```ts
+// The class doesn't know what T is yet.
+class DataStorage<T> {
+  private data: T;
+
+  constructor(item: T) {
+    this.data = item;
+  }
+
+  getData(): T {
+    return this.data;
+  }
+}
+
+// We pass <string> right before the (). Now T becomes string everywhere inside.
+let textStorage = new DataStorage<string>("Secret Password");
+console.log(textStorage.getData()); 
+
+// We pass a custom object shape. Now T becomes that object everywhere.
+let orderStorage = new DataStorage<{ id: string }>({ id: "VXOR-123" });
+```
+### Example 3: Generic Interface
+```ts
+// T is a placeholder for the actual payload data
+interface ApiResponse<T> {
+  status: number;
+  message: string;
+  data: T; 
+}
+
+// 1. Used for a User API route
+let userResponse: ApiResponse<{ name: string }> = {
+  status: 200,
+  message: "Success",
+  data: { name: "Ajith" } // Must match { name: string }
+};
+
+// 2. Used for a Product API route
+let productResponse: ApiResponse<number[]> = {
+  status: 200,
+  message: "Success",
+  data: [101, 102, 103] // Must match number[]
+};
+```
 ## Interface
 ## Class
 ## Dependency Injection
