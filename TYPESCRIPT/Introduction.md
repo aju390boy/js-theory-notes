@@ -797,6 +797,8 @@ let productResponse: ApiResponse<number[]> = {
 ## Interface
 ## Class
 ## Dependency Injection
+Dependency Injection is an Archetcural design pattern,used to implement Invertion of Control.
+loosely-coupled,and intent to maintanable code
 Dependency Injection is a scary word for a very simple rule: Do not use the new keyword inside your class.
 ## Narrowing
 ## Mixins
@@ -804,3 +806,5 @@ Dependency Injection is a scary word for a very simple rule: Do not use the new 
 ## Duck Typing
 ## inheritance
 ## Abstraction
+## Decorators
+## TSyringe Library
