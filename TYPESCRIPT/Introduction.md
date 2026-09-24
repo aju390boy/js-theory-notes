@@ -799,7 +799,71 @@ let productResponse: ApiResponse<number[]> = {
 ## Dependency Injection
 Dependency Injection is an Archetcural design pattern,used to implement Invertion of Control.
 loosely-coupled,and intent to maintanable code
+Avoiding Tight Coupling and achieving Inversion of Control (IoC) is the ultimate goal.
 Dependency Injection is a scary word for a very simple rule: Do not use the new keyword inside your class.
+
+**The Bad Way (Tightly Coupled):** Imagine buying a car where the engine is permanently welded into the car's frame. If the engine breaks, you have to throw away the whole car. In code, this happens when you use new Database() inside your OrderService. The Service is superglued to that exact Database.
+
+**The DI Way (Loosely Coupled):** The car has an empty slot for an engine. You can drop in a petrol engine today, and an electric engine tomorrow. In code, you pass the database through the constructor. They are not glued together anymore!
+
+### Types of Dependency Injection 
+**1.** Constructor Injection (The Best One)
+You pass the tool when you are building the object.
+* When to use it: When your class must have this tool to work. (This is the industry standard and what you should use 90% of the time).
+```ts
+class OrderService {
+  // The tool is injected right when the class is created
+  constructor(private db: Database) {} 
+
+  checkout() {
+    this.db.save();
+  }
+}
+
+let myService = new OrderService(new Database());
+```
+**2.** Property / Setter Injection (The Optional One)
+You build the object first, and then you attach the tool to it later. In Java, this is usually called Setter Injection.
+* When to use it: When the tool is optional, or if you want to swap the tool out later while the app is running.
+```ts
+class OrderService {
+  // We don't ask for it in the constructor. 
+  // We just leave an empty slot for it.
+  public db: Database | null = null; 
+
+  // We inject the tool later using a property or a setter function
+  setDatabase(database: Database) {
+    this.db = database;
+  }
+
+  checkout() {
+    if (this.db) {
+      this.db.save();
+    }
+  }
+}
+
+let myService = new OrderService();
+// We inject it after the object is already built!
+myService.setDatabase(new Database());
+```
+**3.** Method Injection (The Temporary One)
+Instead of giving the tool to the whole class, you only give the tool to one specific function exactly when you call it.
+* When to use it: When only one single method needs the tool, and the rest of the class doesn't care about it. It saves memory.
+```ts
+class OrderService {
+  // No constructor injection, no properties.
+
+  // We inject the tool directly into the function that needs it
+  checkout(db: Database) {
+    db.save();
+  }
+}
+
+let myService = new OrderService();
+// We pass the dependency right when we call the method
+myService.checkout(new Database());
+```
 ## Narrowing
 ## Mixins
 ## Decorators
