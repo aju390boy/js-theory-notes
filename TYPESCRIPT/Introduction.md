@@ -866,7 +866,6 @@ myService.checkout(new Database());
 ```
 > [!TIP]
 > ### Become pro in Dependecy Injection
-
 > * Manual Constructor Injection (No Frameworks): Practice building an Express route where you manually pass a Service class into  your Controller using new.
 > * Dependency Inversion (SOLID): Learn how to use TypeScript interface so your controller asks for an abstract "Database" rather than specifically "MongoDB".
 > * DI Containers (The Pro Level): Once manual injection gets annoying, learn a lightweight DI container like TSyringe or Awilix. This will auto-wire your classes just like Java does, but you will actually understand how it works under the hood.
