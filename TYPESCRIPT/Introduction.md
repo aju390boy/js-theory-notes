@@ -796,13 +796,13 @@ let productResponse: ApiResponse<number[]> = {
 ```
 > [!TIP]
 > extends
-> Use `` to say the generic can accept any object, but it must have at least these specific properties inside it.
+> * Use `` to say the generic can accept any object, but it must have at least these specific properties inside it.
 > keyof
-> Use `` to link two generics together, forcing the second one to only accept exact property names that actually exist inside the first one.
+> * Use `` to link two generics together, forcing the second one to only accept exact property names that actually exist inside the first one.
 > defaults
-> Use `` to set a backup type, so if you don't manually provide a type, TypeScript just uses your backup automatically.
+> * Use `` to set a backup type, so if you don't manually provide a type, TypeScript just uses your backup automatically.
 > 1-time rule
-> Delete the `` entirely if you only use it once in a function, because a generic's only real job is to act as a bridge connecting two or more things together.
+> * Delete the `` entirely if you only use it once in a function, because a generic's only real job is to act as a bridge connecting two or more things together.
 ## Interface
 ## Class
 ## Dependency Injection
