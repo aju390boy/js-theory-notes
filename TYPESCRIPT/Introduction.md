@@ -864,7 +864,8 @@ let myService = new OrderService();
 // We pass the dependency right when we call the method
 myService.checkout(new Database());
 ```
-Tips for become pro in Dependecy Injection
+> [!TIP]
+> Tips for become pro in Dependecy Injection
 
 * Manual Constructor Injection (No Frameworks): Practice building an Express route where you manually pass a Service class into  your Controller using new.
 * Dependency Inversion (SOLID): Learn how to use TypeScript interface so your controller asks for an abstract "Database" rather than specifically "MongoDB".
