@@ -794,6 +794,15 @@ let productResponse: ApiResponse<number[]> = {
   data: [101, 102, 103] // Must match number[]
 };
 ```
+> [!TIP]
+> extends
+> Use `` to say the generic can accept any object, but it must have at least these specific properties inside it.
+> keyof
+> Use `` to link two generics together, forcing the second one to only accept exact property names that actually exist inside the first one.
+> defaults
+> Use `` to set a backup type, so if you don't manually provide a type, TypeScript just uses your backup automatically.
+> 1-time rule
+> Delete the `` entirely if you only use it once in a function, because a generic's only real job is to act as a bridge connecting two or more things together.
 ## Interface
 ## Class
 ## Dependency Injection
@@ -869,6 +878,7 @@ myService.checkout(new Database());
 > * Manual Constructor Injection (No Frameworks): Practice building an Express route where you manually pass a Service class into  your Controller using new.
 > * Dependency Inversion (SOLID): Learn how to use TypeScript interface so your controller asks for an abstract "Database" rather than specifically "MongoDB".
 > * DI Containers (The Pro Level): Once manual injection gets annoying, learn a lightweight DI container like TSyringe or Awilix. This will auto-wire your classes just like Java does, but you will actually understand how it works under the hood.
+
 
 ## Narrowing
 ## Mixins
