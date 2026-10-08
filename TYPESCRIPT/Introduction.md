@@ -883,4 +883,14 @@ myService.checkout(new Database());
 ## inheritance
 ## Abstraction
 ## Decorators
+
+* Decorators can be applied to classes, methods, accessors, properties, and parameters, but not to local variables inside standard function blocks.
+
+> [!IMPORTANT]
+> * When you place the @ symbol above a method, TypeScript automatically passes three pieces of data behind the scenes. Therefore, the decorator function you write must be built to accept exactly three arguments (target, propertyKey, descriptor).
+> * When you place the @ symbol above a property, TypeScript only has two pieces of data available at that exact moment. Therefore, your decorator function must be built to accept exactly two arguments (target, propertyKey).
+> * When you place the @ symbol above an entire class, TypeScript passes the class blueprint itself. Therefore, your decorator function must be built to accept exactly one argument (constructor).
+> **Your assumption is 100% correct!** You must write the specific function signature based on what you are planning to wrap. Because TypeScript enforces strict typing, if you try to put a 2-argument property decorator on top of a method, the compiler will instantly throw an error and block you.
+
+
 ## TSyringe Library
