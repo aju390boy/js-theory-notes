@@ -875,22 +875,20 @@ myService.checkout(new Database());
 > * Dependency Inversion (SOLID): Learn how to use TypeScript interface so your controller asks for an abstract "Database" rather than specifically "MongoDB".
 > * DI Containers (The Pro Level): Once manual injection gets annoying, learn a lightweight DI container like TSyringe or Awilix. This will auto-wire your classes just like Java does, but you will actually understand how it works under the hood.
 
-
-## Narrowing
-## Mixins
-## Decorators
-## Duck Typing
-## inheritance
-## Abstraction
-## TSyringe Library
-
-
 ## Decorators
 A decorator in TypeScript is a higher-order function, applied using the @ symbol, that intercepts the declaration of a class, method, or property to observe, modify, or completely replace its behavior from the outside.                            
 They execute exactly once at runtime—when the file is initially loaded into memory—permanently upgrading the underlying JavaScript blueprint before any objects are ever created. This architectural pattern enforces strict separation of concerns, allowing you to dynamically wrap core business logic with reusable rules (like security, logging, or validation) without directly altering the original source code.
 
-* Decorators can be applied to classes, methods, accessors, properties, and parameters, but not to local variables inside standard function blocks.
-**WORKFLOW :** When you start your Node.js server, JavaScript reads your file from top to bottom. When it hits a decorator, it immediately fires the decorator to upgrade the class blueprint. It only does this once. Because the blueprint is now permanently upgraded, every time you type new in the future, the object automatically gets the upgraded behavior for free. Method, Property, and Class decorators all follow this exact same rule.
+* **WORKFLOW :** When you start your Node.js server, JavaScript reads your file from top to bottom. When it hits a decorator, it immediately fires the decorator to upgrade the class blueprint. It only does this once. Because the blueprint is now permanently upgraded, every time you type new in the future, the object automatically gets the upgraded behavior for free. Method, Property, and Class decorators all follow this exact same rule.
+* Decorators can be applied strictly to classes, methods, accessors, properties, and parameters, but they are architecturally forbidden on standard standalone functions or local variables.
+* Decorators execute exactly once when the module is initially loaded into memory to permanently modify the underlying prototype blueprint, rather than triggering every time a new object is instantiated.
+* To pass custom arguments into a decorator, you must utilize a Decorator Factory, which is a higher-order function that evaluates top-to-bottom and returns the actual wrapper function.
+* If a class or method decorator explicitly returns a new value, that returned value completely overrides and replaces the original constructor or method descriptor in the JavaScript runtime memory.
+* Never use decorators to magically inject new properties into a class at runtime, because TypeScript will not recognize them during development and will throw type errors.
+* Remember that decorators execute exactly once when the server starts, so never store request-specific data (like a user's session token) directly inside the decorator's outer variables.
+* Rely on industry-standard packages like class-validator for property decorators to validate incoming API data rather than writing your own complex validation math from scratch.
+* When using enterprise frameworks like NestJS, rely on their built-in decorators for routing and security instead of trying to mix in old Express middleware.
+
 
 > [!IMPORTANT]
 > * When you place the @ symbol above a method, TypeScript automatically passes three pieces of data behind the scenes. Therefore, the decorator function you write must be built to accept exactly three arguments (target, propertyKey, descriptor).
@@ -898,4 +896,17 @@ They execute exactly once at runtime—when the file is initially loaded into me
 > * When you place the @ symbol above an entire class, TypeScript passes the class blueprint itself. Therefore, your decorator function must be built to accept exactly one argument (constructor).
 > * **Your assumption is 100% correct!** You must write the specific function signature based on what you are planning to wrap. Because TypeScript enforces strict typing, if you try to put a 2-argument property decorator on top of a method, the compiler will instantly throw an error and block you.
 
+## SOLID
+Since you are coming from Java, you already know the core definitions of SOLID. But because TypeScript uses Structural Typing (Duck Typing) instead of strict Java inheritance, the way you apply these principles actually becomes much easier and lighter.
+
+**1. Single Responsibility Principle (SRP)**
+The Rule: A class should have only one reason to change.
+The TS Twist: Keep it exactly like Java. Your OrderService should only handle orders, not send emails. If it needs to send an email, inject an EmailService into it.
+## Narrowing
+## Mixins
+## Decorators
+## Duck Typing
+## inheritance
+## Abstraction
+## TSyringe Library
 
