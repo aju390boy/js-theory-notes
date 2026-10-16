@@ -900,8 +900,10 @@ They execute exactly once at runtime—when the file is initially loaded into me
 Since you are coming from Java, you already know the core definitions of SOLID. But because TypeScript uses Structural Typing (Duck Typing) instead of strict Java inheritance, the way you apply these principles actually becomes much easier and lighter.
 
 **1. Single Responsibility Principle (SRP)**
-The Rule: A class should have only one reason to change.
-The TS Twist: Keep it exactly like Java. Your OrderService should only handle orders, not send emails. If it needs to send an email, inject an EmailService into it.
+> [!NOTE] 
+> The Rule: A class should have only one reason to change.
+> The TS Twist: Keep it exactly like Java. Your OrderService should only handle orders, not send emails. If it needs to send an email, inject an EmailService into it.
+
 ## Narrowing
 ## Mixins
 ## Decorators
