@@ -882,19 +882,20 @@ myService.checkout(new Database());
 ## Duck Typing
 ## inheritance
 ## Abstraction
+## TSyringe Library
+
+
 ## Decorators
+A decorator in TypeScript is a higher-order function, applied using the @ symbol, that intercepts the declaration of a class, method, or property to observe, modify, or completely replace its behavior from the outside.                            
+They execute exactly once at runtime—when the file is initially loaded into memory—permanently upgrading the underlying JavaScript blueprint before any objects are ever created. This architectural pattern enforces strict separation of concerns, allowing you to dynamically wrap core business logic with reusable rules (like security, logging, or validation) without directly altering the original source code.
 
 * Decorators can be applied to classes, methods, accessors, properties, and parameters, but not to local variables inside standard function blocks.
+**WORKFLOW :** When you start your Node.js server, JavaScript reads your file from top to bottom. When it hits a decorator, it immediately fires the decorator to upgrade the class blueprint. It only does this once. Because the blueprint is now permanently upgraded, every time you type new in the future, the object automatically gets the upgraded behavior for free. Method, Property, and Class decorators all follow this exact same rule.
 
 > [!IMPORTANT]
-
 > * When you place the @ symbol above a method, TypeScript automatically passes three pieces of data behind the scenes. Therefore, the decorator function you write must be built to accept exactly three arguments (target, propertyKey, descriptor).
-
 > * When you place the @ symbol above a property, TypeScript only has two pieces of data available at that exact moment. Therefore, your decorator function must be built to accept exactly two arguments (target, propertyKey).
-
 > * When you place the @ symbol above an entire class, TypeScript passes the class blueprint itself. Therefore, your decorator function must be built to accept exactly one argument (constructor).
-
 > * **Your assumption is 100% correct!** You must write the specific function signature based on what you are planning to wrap. Because TypeScript enforces strict typing, if you try to put a 2-argument property decorator on top of a method, the compiler will instantly throw an error and block you.
 
 
-## TSyringe Library
