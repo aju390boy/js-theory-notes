@@ -903,15 +903,19 @@ Since you are coming from Java, you already know the core definitions of SOLID. 
 > [!NOTE] **1. Single Responsibility Principle (SRP)**
 > * The Rule: A class should have only one reason to change.
 > * The TS Twist: Keep it exactly like Java. Your OrderService should only handle orders, not send emails. If it needs to send an email, inject an EmailService into it.
+
 > [!NOTE] **2. Open/Closed Principle (OCP)**
 > * The Rule: Code should be open for extension but closed for modification.
 > * The TS Twist: Instead of using heavy extends (inheritance) to add new features, use TypeScript interfaces to create contracts. You can easily swap in new classes that match the interface shape without touching the original code.
+
 > [!NOTE] **3. Liskov Substitution Principle (LSP)**
 > * The Rule: If you swap a parent class with its child class, the app shouldn't crash.
 > * The TS Twist: TypeScript gives you this almost for free! Because of Duck Typing, as long as the new object has the exact same properties and methods (the same shape), TypeScript doesn't care if they are strictly related by inheritance.
+
 > [!NOTE] **4. Interface Segregation Principle (ISP)**
 > * The Rule: Don't force a class to implement an interface with methods it doesn't need.
 > * The TS Twist: In Java, you have to create multiple files for tiny interfaces. In TypeScript, you can instantly chop up large interfaces on the fly using utility types like Pick and Omit, or simply create tiny, single-purpose interfaces in the same file.
+
 > [!NOTE] **5. Dependency Inversion Principle (DIP)**
 > * The Rule: High-level modules shouldn't depend on low-level modules; both should depend on abstractions (interfaces).
 > * The TS Twist: You already mastered this in Phase 3! Never write new Database() inside your controller. Instead, demand an IDatabase interface in the constructor, and let your Decorators and DI container inject the correct one at runtime.
