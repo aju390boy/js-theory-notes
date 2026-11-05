@@ -925,7 +925,37 @@ Since you are coming from Java, you already know the core definitions of SOLID. 
 > * The Rule: High-level modules shouldn't depend on low-level modules; both should depend on abstractions (interfaces).
 > * The TS Twist: You already mastered this in Phase 3! Never write new Database() inside your controller. Instead, demand an IDatabase interface in the constructor, and let your Decorators and DI container inject the correct one at runtime.
 
+## SOLID Principle
 
+### 1. Single Responsibility Principle (SRP) - The "One Job" Rule
+**The Theory:** A class or function should only have one single reason to change. It should do exactly one job and do it well.   
+**The TypeScript Way:** Think of a restaurant. The waiter takes the order (Controller), the chef cooks the food (Service), and the cashier takes the money (Payment Gateway). If you put all three jobs into one OrderController class, it becomes a messy "God Class." If the Stripe API changes, your controller breaks. If the database changes, your controller breaks. Keep them split up.
+> [NOTE]
+> If you have to use the word "AND" to describe what your class does (e.g., "It calculates the total AND saves it to the database"), you are violating SRP. Split it into two classes.
+
+### 2. Open/Closed Principle (OCP) - The "Plug and Play" Rule
+**The Theory:** Your existing code should be open for extension (adding new features) but closed for modification (changing the old, tested code).                                    
+**The TypeScript Way:** Imagine your VIXOR app accepts credit cards. Now you want to add PayPal. If you open your CheckoutService and add a giant if (payment === 'paypal') block, you are modifying old code and risk breaking the credit card system. Instead, define a standard IPayment interface. Create a brand new PayPalService class that matches that interface. You just "plug in" the new class without ever touching the old code.                               
+> [NOTE]
+> Rely on interfaces and structural typing to add new features via new files, rather than writing endless switch or if/else statements inside existing files.
+
+### 3. Liskov Substitution Principle (LSP) - The "Safe Swap" Rule
+**The Theory:** If you replace a parent class with a child class, the application should not crash or behave weirdly.            
+**The TypeScript Way:** Because Java uses strict inheritance, LSP is very rigid there. TypeScript makes this incredibly easy because of Duck Typing. TypeScript does not care about strict parent/child relationships. As long as the object you pass in has the exact same properties and methods (the exact same structural shape) that the function expects, the swap is 100% safe and valid.                                                 
+> [NOTE]
+> Design your functions to accept a shape (an interface) rather than a specific class instance. This guarantees that any object matching that shape can be safely swapped in at runtime.
+
+### 4. Interface Segregation Principle (ISP) - The "Don't Force It" Rule
+**The Theory:** Never force a class to implement a massive interface if it only actually needs to use one or two of the methods inside it.                                   
+**The TypeScript Way:** In Java, you fix this by creating dozens of tiny interface files, which clutters your project. TypeScript has built-in utility types like Pick and Omit that let you slice up giant interfaces on the fly. If you have a giant IUser interface with 20 properties, but your login function only needs the email and password, you don't create a new interface. You just use Pick<IUser, "email" "password" |>.                             
+> [NOTE]
+> Keep your base interfaces small and focused. When you are forced to work with a massive interface, use Pick and Omit to instantly carve out exactly the pieces you need without creating new files.
+
+### 5. Dependency Inversion Principle (DIP) - The "Wall Socket" Rule
+**The Theory:** High-level code (like your checkout logic) should not directly depend on low-level code (like your MongoDB driver). They should both depend on an abstraction (an interface).                   
+**The TypeScript Way:** You never hardwire your laptop directly into the power lines inside your wall; you use a standard plug (the interface). If you write const db = new MongoDatabase() inside your OrderService, you just hardwired your app. If you ever switch to PostgreSQL, your app breaks. Instead, demand an IDatabase interface in your constructor, and let the Decorators (your Dependency Injection container) plug in the correct database from the outside.                        
+> [NOTE]
+> Never use the new keyword inside your controllers or services to create outside dependencies. Always inject them through the constructor using an interface type.
 
 ## Narrowing
 ## Mixins
